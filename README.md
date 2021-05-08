@@ -10,8 +10,9 @@ The course tackles different ways to create Java RESTful Web Services.
 - Arquillian Integration Testing
 - Java API for RESTful Web Services (JAX-RS)
 - REST Assured Integration Testing
+- MicroShed Integration Testing
 - Batch Processing
 - Enterprise Beans (EJB)
 - Jakarta EE Security
 - JSON Web Tokens (JWT) RBAC
-- Sprint
+- [Spring REST services](https://spring.io/)
