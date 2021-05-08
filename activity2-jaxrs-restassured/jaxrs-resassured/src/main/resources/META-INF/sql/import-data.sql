@@ -1,0 +1,3 @@
+INSERT INTO oscarreviews(category, nominee, review, username, createdDateTime, lastModifiedDateTime) VALUES('actor','Rendo', 'pretty good tbh','rendo', '2021-02-02 07:00', '2021-02-03 07:00');
+INSERT INTO oscarreviews(category, nominee, review, username, createdDateTime, lastModifiedDateTime) VALUES('film','Sample Film', 'review soon','rendo', '2021-02-02 07:00', '2021-02-03 07:00');
+INSERT INTO oscarreviews(category, nominee, review, username, createdDateTime, lastModifiedDateTime) VALUES('effects','After Effects', 'Adobe','rendo', '2021-02-04 09:30', '2021-02-04 09:35');

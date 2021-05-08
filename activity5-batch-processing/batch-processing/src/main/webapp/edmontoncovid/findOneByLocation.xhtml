@@ -1,0 +1,87 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+        xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions"
+        xmlns:jsf="http://xmlns.jcp.org/jsf"
+        xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+        xmlns:o="http://omnifaces.org/ui"
+        xmlns:of="http://omnifaces.org/functions"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:b="http://bootsfaces.net/ui"
+        template="/WEB-INF/jsf-templates/layout.xhtml">
+
+    <ui:param name="title" value="CurrentCasesByLocalGeographicArea - Find One by Location"/>
+
+    <ui:define name="maincontent">
+
+        <b:jumbotron>
+            <h1>Find One by Location</h1>
+        </b:jumbotron>
+
+        <b:messages id="messages"/>
+
+        <c:if test="#{not empty currentCasesByLocalGeographicAreaFindOneByLocationController.findOneResult}">
+
+            <b:panelGrid columns="2" colSpans="2,10">
+                <h:panelGroup>
+                    <strong><h:outputText value="Location"/></strong>
+                </h:panelGroup>
+                <h:outputText value="#{currentCasesByLocalGeographicAreaFindOneByLocationController.findOneResult.location}"/>
+
+                <h:panelGroup>
+                    <strong><h:outputText value="Total Case"/></strong>
+                </h:panelGroup>
+                <h:outputText value="#{currentCasesByLocalGeographicAreaFindOneByLocationController.findOneResult.totalCases}"/>
+
+                <h:panelGroup>
+                    <strong><h:outputText value="Active Cases"/></strong>
+                </h:panelGroup>
+                <h:outputText value="#{currentCasesByLocalGeographicAreaFindOneByLocationController.findOneResult.activeCases}"/>
+
+                <h:panelGroup>
+                    <strong><h:outputText value="Recovered Cases"/></strong>
+                </h:panelGroup>
+                <h:outputText value="#{currentCasesByLocalGeographicAreaFindOneByLocationController.findOneResult.recoveredCases}"/>
+
+                <h:panelGroup>
+                    <strong><h:outputText value="Deaths"/></strong>
+                </h:panelGroup>
+                <h:outputText value="#{currentCasesByLocalGeographicAreaFindOneByLocationController.findOneResult.deaths}"/>
+
+            </b:panelGrid>
+
+        </c:if>
+
+        <b:form id="form1" inline="true">
+            <b:inputText
+                    id="latitude"
+                    label="Latitude"
+                    value="#{currentCasesByLocalGeographicAreaFindOneByLocationController.latitude}"
+            />
+            <b:inputText
+                    id="longitude"
+                    label="Longitude"
+                    value="#{currentCasesByLocalGeographicAreaFindOneByLocationController.longitude}"
+            />
+            <b:commandButton
+                    value="Search"
+                    action="#{currentCasesByLocalGeographicAreaFindOneByLocationController.onSearch}"
+                    ajax="false"
+                    look="primary"
+                    iconAwesome="Search"
+            />
+
+            <b:commandButton
+                    value="Clear"
+                    action="#{currentCasesByLocalGeographicAreaFindOneByLocationController.onClear}"
+                    ajax="false"
+                    iconAwesome="erase"
+            />
+        </b:form>
+
+    </ui:define>
+
+</ui:composition>
